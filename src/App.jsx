@@ -58,11 +58,9 @@ function Slideshow() {
   return (
     <div className="slideshow">
       {slides.map((slide, i) => (
-        <div
-          key={i}
-          className={`slide ${i === current ? 'active' : ''}`}
-          style={{ backgroundImage: `url(${slide.src})` }}
-        />
+        <div key={i} className={`slide ${i === current ? 'active' : ''}`}>
+          <img src={slide.src} alt={slide.title} />
+        </div>
       ))}
 
       <div className="slide-overlay" />
