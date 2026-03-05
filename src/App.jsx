@@ -4,21 +4,25 @@ import './App.css'
 const slides = [
   {
     src: '/chair.png',
+    tabSrc: '/chair-tab.png',
     title: 'Curated Furniture',
     subtitle: 'Premium designs crafted for modern living spaces',
   },
   {
     src: '/cabinet.png',
+    tabSrc: '/cabinet-tab.png',
     title: 'Elegant Storage',
     subtitle: 'Where form meets function in perfect harmony',
   },
   {
     src: '/pilates.png',
+    tabSrc: '/pilates-tab.png',
     title: 'Wellness Essentials',
     subtitle: 'Elevate your everyday wellness routine',
   },
   {
     src: '/sauna.png',
+    tabSrc: '/sauna-tab.png',
     title: 'Luxury Relaxation',
     subtitle: 'Your personal sanctuary, reimagined',
   },
@@ -59,7 +63,10 @@ function Slideshow() {
     <div className="slideshow">
       {slides.map((slide, i) => (
         <div key={i} className={`slide ${i === current ? 'active' : ''}`}>
-          <img src={slide.src} alt={slide.title} />
+          <picture>
+            <source media="(max-width: 1024px)" srcSet={slide.tabSrc} />
+            <img src={slide.src} alt={slide.title} />
+          </picture>
         </div>
       ))}
 

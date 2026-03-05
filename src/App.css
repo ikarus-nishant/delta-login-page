@@ -25,9 +25,20 @@
   justify-content: center;
 }
 
-.slide img {
+.slide img,
+.slide picture {
   max-width: 100%;
   max-height: 100%;
+  display: flex;
+}
+
+.slide picture img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.slide > img {
   object-fit: contain;
 }
 
